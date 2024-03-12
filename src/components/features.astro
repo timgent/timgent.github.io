@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Full stack web applications",
+    description:
+      "I mostly build applications with Elixir Liveview, TypeScript, React, or Astro - using the right tool for the job",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Event driven microservices",
+    description:
+      "Using RabbitMQ or Kafka to build event driven microservices that scale",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "Data engineering",
+    description:
+      "Experienced with Apache Spark, with proven results with some of the largest healthcare datasets",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Coaching and Mentoring",
+    description:
+      "From junior developers to aspiring technology leaders I help people to reach their potential",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Product focussed",
+    description:
+      "I focus on projects that will bring a positive impact to the world",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Always learning",
+    description:
+      "Where I don't have the skills I pick up new expertise quickly",
+    icon: "bx:bxs-book-open",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    A deep skill set
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    With over 10 years of experience as a developer, from individual
+    contributor, to head of engineering, I have the skills to make a big impact
+    in a range of roles.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
