@@ -2,7 +2,7 @@
 draft: false
 title: "Serialisation challenges with Spark and Scala"
 snippet: ""
-image: { src: "scala-spark-1-webp", alt: "" }
+image: { src: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?&fit=crop&w=430&h=240", alt: "Scala and Spark code" }
 publishDate: "2018-09-05 12:00"
 category: "Technology"
 author: "Tim Gent"
