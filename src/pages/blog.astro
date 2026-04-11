@@ -1,9 +1,28 @@
 ---
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+// Eagerly import all local blog images so Astro can optimise them.
+// Keys are paths relative to this file (src/pages/), e.g. "../assets/foo.webp".
+const localAssets = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/**/*.{png,jpg,jpeg,gif,webp,avif,svg}",
+  { eager: true }
+);
+
+// Resolve a frontmatter `image.src` value to either an ImageMetadata object
+// (for local assets referenced relative to the content file) or a plain URL
+// string (for remote images).  Content files live in src/content/blog/, so a
+// path like "../../assets/foo.webp" maps to src/assets/foo.webp which is
+// "../assets/foo.webp" relative to this pages file.
+function resolveImage(src: string): ImageMetadata | string {
+  if (src.startsWith("http://") || src.startsWith("https://")) return src;
+  const filename = src.split("/").pop()!;
+  return localAssets[`../assets/${filename}`]?.default ?? src;
+}
 
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
@@ -30,7 +49,7 @@ publishedBlogEntries.sort(function (a, b) {
               <a href={`/blog/${blogPostEntry.id}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
-                    src={blogPostEntry.data.image.src}
+                    src={resolveImage(blogPostEntry.data.image.src)}
                     alt={blogPostEntry.data.image.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
                     width={800}
