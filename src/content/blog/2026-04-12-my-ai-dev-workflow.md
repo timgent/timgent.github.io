@@ -76,3 +76,8 @@ see more and more of this getting automated away. If I had unlimited AI tokens I
 to orchestrate the bits that I currently do. Taking on user feedback, responding, A-B testing, etc.
 
 I do personally worry about the future for software engineers. In more complex systems that architectural guidance
+is now a large part of the value of human devs - little side projects simply don't need that. Shepherding the AI
+agents and making ongoing improvements, improving the "agent harness" etc are currently important (but also automatable IMO).
+Product insight and guidance is also currently valuable. Can all of these things also be delegated to agents?
+I'm not sure yet, but I wouldn't bet against it at this point. For now I'm just trying to keep up to date and make
+the most of these powerful new tools we have.
