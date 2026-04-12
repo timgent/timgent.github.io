@@ -2,7 +2,7 @@
 draft: false
 title: "Serialisation challenges with Spark and Scala — Part 2 — Now for something really challenging…"
 snippet: "A deeper dive into serialization with Spark and Scala, working through a complex example step by step."
-image: { src: "../../assets/scala-spark-1.webp", alt: "Scala and Spark code" }
+image: { src: "../../assets/scala-spark-1.webp", alt: "" }
 publishDate: "2018-09-19 12:00"
 category: "Technology"
 author: "Tim Gent"
