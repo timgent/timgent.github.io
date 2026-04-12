@@ -5,7 +5,7 @@ snippet: "Struggling with slow Elixir compile times? Learn why changing one file
 image:
   {
     src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?&fit=crop&w=430&h=240",
-    alt: "Code on a screen",
+    alt: "",
   }
 publishDate: "2022-08-17 00:00"
 category: "Technology"
