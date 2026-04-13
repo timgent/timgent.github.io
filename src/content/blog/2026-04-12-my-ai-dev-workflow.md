@@ -43,6 +43,18 @@ I have another skill that very simply tells Claude how to pick up a new issue - 
 makes for better tests, code that is more likely to work first time, and cleaner code thanks to an explicit refactor step. I also find exploratory
 testing as part of coding a new feature is helpful, though don't always use this just as my Claude Pro plan is pretty stingy on tokens.
 
+## Code reviews
+
+For exploratory personal projects I skim-read the code - more interested in checking structure than correctness. Automated tests and an AI driven manual
+test of the changes typically gives me enough confidence in correctness.
+
+For real production work I still do a proper code review myself, and do often find subtle issues. Things like not wrapping the right things in a DB
+transaction, or adding a migration that will cause a lock on the Database. Though as I find these subtle things adding skills and AI code review guidance to catch them helps avoid such issues
+
+Cursor Bugbot has been great for code reviews in work contexts, but for personal use I find most of the code review skills too expensive. If it's
+a high risk change I'll ask for a more targeted AI code review about the things that I'm worried about. Most AI Skills for code reviews I tried
+spin up so many sub-agents it costs a lot in tokens. Worth it for a proper production app. Not worth it for my side projects.
+
 ## Tech debt and application architecture
 
 The above approaches get features out quickly, but bugs can slip through. Usually this is something that can be more systematically fixed at
