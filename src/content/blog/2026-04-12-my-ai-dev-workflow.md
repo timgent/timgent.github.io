@@ -49,7 +49,8 @@ For exploratory personal projects I skim-read the code - more interested in chec
 test of the changes typically gives me enough confidence in correctness.
 
 For real production work I still do a proper code review myself, and do often find subtle issues. Things like not wrapping the right things in a DB
-transaction, or adding a migration that will cause a lock on the Database. Though as I find these subtle things adding skills and AI code review guidance to catch them helps avoid such issues
+transaction, or adding a migration that will cause a lock on the Database. Though as I find these subtle things adding skills and AI code review
+guidance to catch them helps avoid such issues in the future.
 
 Cursor Bugbot has been great for code reviews in work contexts, but for personal use I find most of the code review skills too expensive. If it's
 a high risk change I'll ask for a more targeted AI code review about the things that I'm worried about. Most AI Skills for code reviews I tried
