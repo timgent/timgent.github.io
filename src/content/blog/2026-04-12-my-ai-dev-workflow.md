@@ -43,6 +43,9 @@ I have another skill that very simply tells Claude how to pick up a new issue - 
 makes for better tests, code that is more likely to work first time, and cleaner code thanks to an explicit refactor step. I also find exploratory
 testing as part of coding a new feature is helpful, though don't always use this just as my Claude Pro plan is pretty stingy on tokens.
 
+I always use plan mode first and when there are issues with the plan I like to edit it, leave TODO comments, then ask Claude to go sort them out.
+This avoids the painful back-and-forth with the agent.
+
 ## Code reviews
 
 For exploratory personal projects I skim-read the code - more interested in checking structure than correctness. Automated tests and an AI driven manual
