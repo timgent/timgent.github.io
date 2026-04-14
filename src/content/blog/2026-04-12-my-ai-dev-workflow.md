@@ -46,7 +46,8 @@ testing as part of coding a new feature is helpful, though don't always use this
 ## Code reviews
 
 For exploratory personal projects I skim-read the code - more interested in checking structure than correctness. Automated tests and an AI driven manual
-test of the changes typically gives me enough confidence in correctness.
+test of the changes typically gives me enough confidence in correctness. I'll leave any of my own comments on the PR and use an agent skill to
+get Claude to address them (as I have no personal Claude API key to use with Github Actions).
 
 For real production work I still do a proper code review myself, and do often find subtle issues. Things like not wrapping the right things in a DB
 transaction, or adding a migration that will cause a lock on the Database. Though as I find these subtle things adding skills and AI code review
