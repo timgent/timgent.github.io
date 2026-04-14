@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
+import Giscus from "@components/giscus.astro";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -51,6 +52,7 @@ const { Content } = await render(entry);
     <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
       <Content />
     </div>
+    <Giscus />
     <div class="text-center mt-8">
       <a
         href="/blog"
