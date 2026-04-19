@@ -16,6 +16,10 @@ export async function getStaticPaths() {
 // Get the entry directly from the prop on render
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const goatCounterSite = import.meta.env.PUBLIC_GOATCOUNTER_SITE;
+const goatCounterUrl = goatCounterSite
+  ? `https://${goatCounterSite}.goatcounter.com/count`
+  : null;
 ---
 
 <Layout title={entry.data.title}>
@@ -46,6 +50,14 @@ const { Content } = await render(entry);
             ))
           }
         </div>
+        {goatCounterUrl && (
+          <>
+            <span class="text-gray-400 hidden md:block">•</span>
+            <span class="text-gray-400 text-sm">
+              <span class="goatcounter-count" data-path={Astro.url.pathname}></span> views
+            </span>
+          </>
+        )}
       </div>
     </div>
 
@@ -61,4 +73,12 @@ const { Content } = await render(entry);
       >
     </div>
   </Container>
+  {goatCounterUrl && (
+    <script
+      is:inline
+      data-goatcounter={goatCounterUrl}
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+  )}
 </Layout>
